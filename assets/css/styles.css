@@ -234,8 +234,8 @@ img {
 }
 
 .nav__button-ghost {
-  background-color: hsla(241, 58%, 75%, 0.584);
-  padding: 0.2rem 1.6rem;
+  background-color: hsla(242, 60%, 17%, 0.584);
+  padding: 0 1.5rem;
   border: 2px solid var(--title-color);
   border-radius: 0.5rem;
 }
@@ -291,6 +291,7 @@ div.scrollmenu a:hover {
 .home__title {
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  font-weight: var(--font-regular);
 }
 
 .home__img {
@@ -306,12 +307,29 @@ div.scrollmenu a:hover {
 /*=============== CARD ===============*/
 .card__container {
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   justify-content: center;
   row-gap: 2rem;
 }
 
-.card__article:nth-last-child(-n+5) {
+.card__article:nth-last-child(-n + 5) {
   display: none;
+}
+
+.card__article {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.card__title {
+  font-size: var(--normal-font-size);
+  padding: 0.25rem;
+  line-height: 1.5;
+  background-color: hsl(220, 53%, 97%);
+}
+
+.aside {
+  background-color: aquamarine;
 }
 
 /*=============== NEW ===============*/
@@ -325,7 +343,7 @@ div.scrollmenu a:hover {
   padding: 0.75rem 0.25rem;
   line-height: 1.5;
   background-color: hsl(220, 53%, 97%);
-    border: 1px solid hsl(206, 100%, 20%);
+  border: 1px solid hsl(206, 100%, 20%);
 }
 /*=============== ENJOY ===============*/
 
@@ -363,15 +381,15 @@ div.scrollmenu a:hover {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-  .card__container {
+  /* .card__container {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     row-gap: 2rem;
   }
 
-  .card__article:nth-last-child(-n+1) {
+  .card__article:nth-last-child(-n + 5) {
     display: block;
-  }
+  } */
 }
 
 @media screen and (min-width: 767px) {
@@ -432,14 +450,19 @@ div.scrollmenu a:hover {
   }
 
   .card__container {
-    grid-template-columns: 1fr 1fr 1fr;
+    padding-block: 1rem;
+    grid-template-columns: 71% 1fr;
     justify-content: center;
-    row-gap: 2rem;
   }
 
-  .card__article:nth-last-child(-n+5) {
-      display: block;
-    }
+  .card__content {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .card__article:nth-last-child(-n + 5) {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1120px) {
